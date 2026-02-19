@@ -36,7 +36,7 @@ const Scanning = ({ addToHerd, onBack, mode = 'breed' }) => {
 
     // Fetch config for CCTV status
     useEffect(() => {
-        fetch('https://cattle-scan.onrender.com/settings')
+        fetch('http://localhost:5000/settings')
             .then(res => res.json())
             .then(data => setAppConfig(data))
             .catch(err => console.error("Failed to fetch settings for scanning:", err));
@@ -69,7 +69,7 @@ const Scanning = ({ addToHerd, onBack, mode = 'breed' }) => {
         formData.append('file', image);
 
         try {
-            const response = await fetch('https://cattle-scan.onrender.com/predict', {
+            const response = await fetch('http://localhost:5000/predict', {
                 method: 'POST',
                 body: formData,
             });
@@ -117,7 +117,7 @@ const Scanning = ({ addToHerd, onBack, mode = 'breed' }) => {
 
         } catch (error) {
             console.error("Error analyzing image:", error);
-            alert("Failed to analyze image. Ensure backend is running at https://cattle-scan.onrender.com");
+            alert("Failed to analyze image. Ensure backend is running at http://localhost:5000");
         } finally {
             setLoading(false);
         }
