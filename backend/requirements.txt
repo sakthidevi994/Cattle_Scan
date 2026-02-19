@@ -1,7 +1,8 @@
-
 Flask
 flask-cors
 torch
 torchvision
 pillow
 timm
+opencv-python-headless
+gunicorn
