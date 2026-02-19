@@ -26,7 +26,7 @@ const RegisterCow = ({ addToHerd, onBack }) => {
         formDataCheck.append('file', file);
 
         try {
-            const res = await fetch('http://localhost:5000/predict', {
+            const res = await fetch('https://cattle-scan.onrender.com/predict', {
                 method: 'POST',
                 body: formDataCheck
             });

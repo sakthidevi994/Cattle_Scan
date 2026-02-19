@@ -12,7 +12,7 @@ const Settings = ({ onBack }) => {
     const [isTesting, setIsTesting] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/settings')
+        fetch('https://cattle-scan.onrender.com/settings')
             .then(res => res.json())
             .then(data => {
                 setConfig(data);
@@ -66,7 +66,7 @@ const Settings = ({ onBack }) => {
                 body = { cctv_enabled: cctvSettings.status === 'live', cctv_url: cctvSettings.url };
             }
 
-            const response = await fetch('http://localhost:5000/settings', {
+            const response = await fetch('https://cattle-scan.onrender.com/settings', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body)

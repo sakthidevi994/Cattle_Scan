@@ -130,7 +130,7 @@ const CctvScanner = ({ onCapture, remoteConfig }) => {
                         {isRemote ? (
                             <img
                                 ref={imgRef}
-                                src="http://localhost:5000/video_feed"
+                                src="https://cattle-scan.onrender.com/video_feed"
                                 alt="Remote Farm CCTV"
                                 className="cctv-feed"
                                 style={{ width: '100%', display: 'block' }}
